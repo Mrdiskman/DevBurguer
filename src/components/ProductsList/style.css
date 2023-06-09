@@ -1,0 +1,19 @@
+.containerListaProdutos {
+  width: max-content;
+  height: max-content;
+  display: flex;
+  overflow-x: scroll;
+  padding: 0px;
+  margin-left: 16px;
+  margin-top: 0px;
+}
+
+@media (min-width: 768px) {
+  .containerListaProdutos {
+    width: 1000px;
+    height: 735px;
+    display: flex;
+    overflow-x: hidden;
+    flex-wrap: wrap;
+  }
+}

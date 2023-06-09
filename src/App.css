@@ -1,0 +1,52 @@
+.principal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-left: 115px;
+  height: max-content;
+}
+.parteDeCima{
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+.listaProdutos{
+  width: 1000px;
+  height: max-content;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.carrinho{
+  width: 365px;
+  height: 225px;
+}
+
+@media (min-width: 320px) and (max-width: 426px){
+  .principal{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .parteDeCima{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  .listaProdutos{
+    width: 100vw;
+    height: 350px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    margin-left: 0px;
+  }
+}
