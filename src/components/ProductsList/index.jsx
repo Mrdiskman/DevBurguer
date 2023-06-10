@@ -1,16 +1,22 @@
 import Product from "../Product";
 import "./style.css";
+import { Contexts } from "../../context";
+import { useContext } from "react";
 
-function ProductsList({ products, handleClick, filtrado }) {
+function ProductsList() {
+  const { products, filter } = useContext(Contexts);
+
   return (
     <ul className="containerListaProdutos">
-      {filtrado.length
-        ? filtrado.map((elem, index) => (
-            <Product elem={elem} key={index} handleClick={handleClick} />
-          ))
-        : products.map((elem, index) => (
-            <Product elem={elem} key={index} handleClick={handleClick} />
-          ))}
+      {filter && Array.isArray(filter) && filter.length ? (
+        filter.map((elem, index) => <Product elem={elem} key={index} />)
+      ) : (
+        products && Array.isArray(products) && products.length ? (
+          products.map((elem, index) => <Product elem={elem} key={index} />)
+        ) : (
+          <p>No products available</p>
+        )
+      )}
     </ul>
   );
 }

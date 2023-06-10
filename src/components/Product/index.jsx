@@ -1,6 +1,9 @@
+import { useContext } from "react";
+import { Contexts } from "../../context";
 import "./style.css";
 
-function Product({ elem, handleClick }) {
+function Product({ elem }) {
+  const {handleClick} = useContext(Contexts);
   return (
     <li className={elem.name === "Milkshake Ovomaltine"? "lista milkshake" : "lista"}>
       <div className="moldeFoto">

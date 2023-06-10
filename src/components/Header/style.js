@@ -3,18 +3,18 @@ import styled from "styled-components";
 export const HeaderStyled = styled.header`
   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-  height: 180px;
+  height: 140px;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #f5f5f5;
-
   align-items: center;
   .title {
     font-family: "Inter", sans-serif;
     font-weight: 700;
+    margin: 0px
   }
   .secondaryTitle {
     color: #d41c26;
@@ -24,7 +24,6 @@ export const HeaderStyled = styled.header`
   .searchBox {
     width: 85%;
     height: 60px;
-    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,6 +33,7 @@ export const HeaderStyled = styled.header`
     gap: 5px;
     padding-right: 5px; 
     padding-left: 5px;
+    margin-top: 10px
   }
   .searchButton {
     width: 35%;
@@ -56,5 +56,22 @@ export const HeaderStyled = styled.header`
     border: none;
     font-family: "Inter", sans-serif;
     font-weight: 700;
+  }
+  @media (min-width: 769px) and (max-width: 1024px){
+    flex-direction: row;
+    height: 110px;
+    gap: 30%;
+    .searchBox{
+      width: 30%;
+    }
+  }
+
+  @media (min-width: 1025px){
+    flex-direction: row;
+    height: 110px;
+    gap: 35%;
+    .searchBox{
+      width: 21%;
+    }
   }
 `;
