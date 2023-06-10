@@ -1,17 +1,12 @@
-import "./App.css";
-import { useState } from "react";
-import { useEffect } from "react";
-import ProductsList from "./components/ProductsList";
-import Cart from "./components/Cart";
-import Headear from "./components/Header";
 import ContextsProvider from "./context";
+import Home from "./pages/Home";
+import "./App.css"
 
 function App() {
 
   return (
     <ContextsProvider>
-      <Headear/>
-      <ProductsList/>
+      <Home/>
     </ContextsProvider>
   );
 }

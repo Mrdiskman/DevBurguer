@@ -1,13 +1,12 @@
 import Product from "../Product";
-import "./style.css";
 import { Contexts } from "../../context";
 import { useContext } from "react";
-
+import {ProductListStyled} from "./styled"
 function ProductsList() {
   const { products, filter } = useContext(Contexts);
 
   return (
-    <ul className="containerListaProdutos">
+    <ProductListStyled>
       {filter && Array.isArray(filter) && filter.length ? (
         filter.map((elem, index) => <Product elem={elem} key={index} />)
       ) : (
@@ -17,7 +16,7 @@ function ProductsList() {
           <p>No products available</p>
         )
       )}
-    </ul>
+    </ProductListStyled>
   );
 }
 

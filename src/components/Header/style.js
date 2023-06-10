@@ -14,7 +14,8 @@ export const HeaderStyled = styled.header`
   .title {
     font-family: "Inter", sans-serif;
     font-weight: 700;
-    margin: 0px
+    margin: 0px;
+    font-size: 28px;
   }
   .secondaryTitle {
     color: #d41c26;
