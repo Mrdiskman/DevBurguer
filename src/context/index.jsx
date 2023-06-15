@@ -22,6 +22,12 @@ const ContextsProvider = ({ children }) => {
     }
   }
 
+  function remove(removedItem) {
+    const filtered = cart.filter((elem) => elem.id !== removedItem.id);
+    setCart(filtered);
+  }
+
+
   const contextValue = {
     handleClick,
     filter,
@@ -30,6 +36,7 @@ const ContextsProvider = ({ children }) => {
     setCart,
     products,
     setProducts,
+    remove
   };
 
   return (

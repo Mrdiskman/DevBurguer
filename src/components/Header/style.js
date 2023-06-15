@@ -16,6 +16,7 @@ export const HeaderStyled = styled.header`
     font-weight: 700;
     margin: 0px;
     font-size: 28px;
+    color: #000000;
   }
   .secondaryTitle {
     color: #d41c26;
@@ -70,9 +71,14 @@ export const HeaderStyled = styled.header`
   @media (min-width: 1025px){
     flex-direction: row;
     height: 110px;
-    gap: 35%;
+    gap: 50%;
+
+    .searchInput {
+    font-size: 14px;
+    font-weight: 700;
+  }
     .searchBox{
-      width: 21%;
+      width: 19%;
     }
   }
 `;

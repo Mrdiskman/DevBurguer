@@ -1,60 +1,62 @@
-import "./style.css";
+import { useContext } from "react";
+import { Contexts } from "../../context";
+import { IoIosRemoveCircleOutline } from 'react-icons/io';
 
-function Cart({ carrinho, setCarrinho }) {
-  function remove(removedItem) {
-    const filtered = carrinho.filter((elem) => elem.id !== removedItem.id);
-    setCarrinho(filtered);
-  }
+import { CartSection, EmptyCartStyle } from "./styled";
 
-  const total = carrinho.reduce((counter, acc) => (counter += acc.price), 0);
-  return carrinho.length === 0 ? (
-    <div className="carrinho">
-      <div className="divisoriaVerde">
-        <h1 className="titleCarrinho">Carrinho de compras</h1>
+function Cart() {
+  const { cart, setCart, remove } = useContext(Contexts);
+
+  const total = cart.reduce((counter, acc) => (counter += acc.price), 0);
+  return cart.length === 0 ? (
+    <EmptyCartStyle>
+      <div className="infoCard">
+        <h1 className="title">Carrinho</h1>
       </div>
-      <div className="parteEscritaCarrinhoVazio">
-        <h1 className="sacolaVazia">Sua sacola está vazia</h1>
-        <p className="adicione">Adicione itens</p>
+      <div className="emptyBag">
+        <h1 className="emptyCartMessage">Sua sacola esta vazia</h1>
+        <p className="addItemsMessage">Adicione items</p>
       </div>
-    </div>
+    </EmptyCartStyle>
   ) : (
-    <div className="carrinho">
-      <div className="divisoriaVerde">
-        <h1 className="titleCarrinho">Carrinho de compras</h1>
+    <CartSection>
+      <div className="infoCard">
+        <h1 className="title">Carrinho</h1>
       </div>
-      <ul className="containerListaCarrinho">
-        {carrinho.map((elem, index) => (
-          <li key={index} className="listaCarrinho">
-            {console.log(elem)}
-            <div className="fundoCinza">
-              <img src={elem.img} alt="" className="imgDoItem" />
+      <ul className="cartItemList">
+        {cart.map((elem, index) => (
+          <li key={index} className="cartItem">
+            <div className="imageBackground">
+              <img src={elem.img} alt="" className="itemImg" />
             </div>
-            <div className="parteEscritaItem">
-              <h1 className="nomeItem">{elem.name}</h1>
-              <p className="categoriaItem">{elem.category}</p>
+            <div className="itemText">
+              <h1 className="itemName">{elem.name}</h1>
+              <p className="itemCategory">{elem.category}</p>
             </div>
-            <div className="containerBotaoRmv">
-              <button onClick={() => remove(elem)} className="botaoRmv">
-                Remover
-              </button>
+            <div className="removeButtonContainer">
+              <IoIosRemoveCircleOutline onClick={() => remove(elem)} className="removeButton">
+                Remove
+              </IoIosRemoveCircleOutline>
             </div>
           </li>
         ))}
       </ul>
-      <div className="tot">
-        <div className="deuIsso">
-          <h1 className="precoTot">Total</h1>
-          <p className="num">
-            {total.toLocaleString("pt-BR", {
+      <div className="total">
+        <div className="subtotal">
+          <h1 className="totalPrice">Total</h1>
+          <p className="amount">
+            {total.toLocaleString("en-US", {
               minimumFractionDigits: 2,
               style: "currency",
-              currency: "BRL",
+              currency: "USD",
             })}
           </p>
         </div>
-        <button onClick={() => setCarrinho([])} className="botaoRmvTds">Remover todos</button>
+        <button onClick={() => setCart([])} className="removeAllButton">
+          Remove All
+        </button>
       </div>
-    </div>
+    </CartSection>
   );
 }
 
