@@ -4,7 +4,7 @@
   *React
   
 ### Descrição
-Trata-se de uma aplicação totalmente feita em React, a função desta aplicação é controlar gastos de uma maneira facil e rápida.
+Trata-se de uma aplicação totalmente feita em React, a função desta aplicação é simular um pedido para um unico cliente consumindo uma api externa para obter o cardápio.
 
 ### Documentação
 Para iniciar o projeto é necessario baixar os requisitos usando o comando:
