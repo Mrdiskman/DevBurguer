@@ -15,7 +15,7 @@ function Cart() {
       </div>
       <div className="emptyBag">
         <h1 className="emptyCartMessage">Sua sacola esta vazia</h1>
-        <p className="addItemsMessage">Adicione items</p>
+        <p className="addItemsMessage">Adicione apenas um item por vez</p>
       </div>
     </EmptyCartStyle>
   ) : (
