@@ -9,6 +9,7 @@ export const ProductListStyled = styled.ul`
   padding: 0px;
   margin-left: 0px;
   margin-top: 40px;
+  margin-bottom: 40px;
 
 @media (min-width: 1024px) {
     width: 65%;

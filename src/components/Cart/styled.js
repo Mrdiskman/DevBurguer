@@ -76,7 +76,7 @@ export const EmptyCartStyle = styled.section`
 
 export const CartSection = styled.section`
   width: 90%;
-  min-height: 400px;
+  min-height: 300px;
   height: fit-content;
 
   button {
