@@ -18,8 +18,9 @@ const ContextsProvider = ({ children }) => {
     const addItem = products.find((elem) => elem.id === productId);
     const itemOnCart = cart.find((elem) => elem.id === productId);
     if (!itemOnCart) {
-      setCart([...cart, addItem]);
+      return setCart([...cart, addItem]);
     }
+    alert("Apenas um item por vez")
   }
 
   function remove(removedItem) {
